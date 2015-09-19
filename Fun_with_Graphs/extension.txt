@@ -1,0 +1,27 @@
+Name: Bobby Huang and Lijun Chen
+Filename: extension.txt
+Assignemnt: PA4
+
+Problem we solved:
+At least how many movies should we watch until we see a certain percentage
+of actors and what are these movies?
+
+How we solved it:
+We first picked the movie with the most actors and add the actors that
+starred in said movie to a disjoint set and calculate how many actors are
+in this set and divide that by total number of actors to get the percentage.
+We keep going until our set is at least as large as the specified percentage.
+
+How we tested it:
+  We ran the file, calculated the size of our actor set and made sure it
+met our percentage requirement.
+
+How to run:
+Our extension takes 3 command line arguments:
+  1) movie_casts.tsv
+  2) output file
+  3) a number between 1 and 100 which represents the percentage of actors
+     you want to see.
+
+For example:
+./extension movie_casts.tsv a.out 30

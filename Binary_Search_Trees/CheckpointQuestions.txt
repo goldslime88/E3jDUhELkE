@@ -1,0 +1,20 @@
+a) Why do we use in-order traversal to print the BST nodes; while use post-order traversal to delete all BST nodes?
+
+Answer: When we use in-order traversal, we can print BST nodes in increasing order of their values. When deleting all the nodes in binary search tree, we must delete all leaves of a parent before deleting the parent as if we delete parent first, we have no way to access the leaves, which causes memory leakage as we fail to delete some leave nodes of the tree.
+
+
+
+ b) Read the source code in BSTNode.hpp and BSTIterator.hpp. Then try to understand how to use operator overloading in C++, which is a feature that Java does not support.  To answer this question, pick an example from the source code and write down which operator is overloaded, what is the expression of this operator (i.e '+' has expression 'a+b') and give an example of using this overloaded operator.
+
+Answer:
+Example:  
+Data operator*() const {
+    	return curr->data;
+}
+Operator overloaded: *
+Expression: *it
+Example of using this overloaded operator:
+BST<int>::iterator it = b.begin();
+cout << *it << endl;
+
+As normal iterator, (*it) will return the object that the iterator point to. But at this time, since we overload this operator, it does not return the BSTNode* , but the data in this node.
